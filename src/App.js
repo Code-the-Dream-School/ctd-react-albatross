@@ -11,7 +11,7 @@ const todoList = [
   },
   {
     id: 3,
-    title: "Take Node.JS Coarse"
+    title: "Take Node.JS Course"
   }
 ]
 
