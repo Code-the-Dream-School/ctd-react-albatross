@@ -11,7 +11,7 @@ let todoList = [
   },
   {
     id: 3,
-    title: "Send B&R order back",
+    title: "Send B & R order back",
   },
 ];
 
