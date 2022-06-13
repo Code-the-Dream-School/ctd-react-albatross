@@ -10,6 +10,8 @@ function App() {
     setTodoList([...todoList, newTodo])
   }
   
+  React.useState(localStorage.getItem)
+
   // Save Todo List in Storage
   React.useEffect(() => {
     localStorage.setItem('savedTodoList', JSON.stringify(todoList))
