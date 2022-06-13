@@ -1,16 +1,14 @@
 import React from 'react';
+import {ToDoList} from './ToDoList';
+import {AddToDoForm} from './AddToDoForm';
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>To Do List</h1>
+      <AddToDoForm />
+      <ToDoList />
+
     </div>
   );
 }
