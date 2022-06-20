@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoListItem from './TodoListItem.js';
 
 const todoList = [
     {
@@ -16,14 +17,13 @@ const todoList = [
 ];
 
 function TodoList() {
+    // console.log(todoList);
     return (
-        <div>
-            <ul>
-                {todoList.map(function (item) {
-                    return <li key={item.id}>{item.title}</li>;
-                })}
-            </ul>
-        </div>
+        <ul>
+            {todoList.map(function (todo) {
+                return <TodoListItem key={todo.id} title={todo.title} />;
+            })}
+        </ul>
     );
 }
 
