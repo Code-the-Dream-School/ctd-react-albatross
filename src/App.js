@@ -22,10 +22,13 @@ function App() {
       <h1>Todo List</h1>
       
       <ul>
-        {todoList.map(task => <li>{task.id}. {task.title}</li>)}
+        {todoList.map(function (task) {
+        return <li key={task.id}>{task.title}</li>;
+        })}
       </ul>
     </div>
-  )};
+  );
+}
  
 
 export default App;
