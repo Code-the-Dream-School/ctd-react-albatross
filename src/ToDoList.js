@@ -4,19 +4,18 @@ import { ToDoListItem } from './ToDoListItem';
 export const toDoList = [
     {
       id: 0,
-      title: 'complete Albatross 1-1',
+      title: 'complete Albatross 1-3',
     },
     {
       id: 1,
-      title: 'wash dishes',
+      title: 'read r2r lesson 1-4',
     },
     {
       id: 2,
-      title: 'finish notes',
+      title: 'submit 1-3',
     },
   ];
 
-// the list above is being passed in as props based on app.js, the prop is stored as "list" therefore here we access props.list to access that specific passed in prop and then use .map() to iterate through each item in the array of objects
 export const ToDoList = (props) => {
     return (
     <ul>

@@ -1,10 +1,12 @@
 import React from 'react';
-import {ToDoList} from './ToDoList';
-import {AddToDoForm} from './AddToDoForm';
-import {toDoList} from './ToDoList';
+import { ToDoList } from './ToDoList';
+import { AddToDoForm } from './AddToDoForm';
+import { toDoList } from './ToDoList';
+import { useState } from 'react';
 
 function App() {
-  let [newToDo, setNewToDo] = React.useState('');
+  // can use React.useState(''); OR can import it and desctructure from it directly as below
+  const [newToDo, setNewToDo] = useState('');
   return (
     <div>
       <h1>To Do List</h1>
