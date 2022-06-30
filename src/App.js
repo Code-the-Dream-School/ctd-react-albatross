@@ -3,7 +3,6 @@ import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 
 function App() {
-	//Stores "New Todo" in React State
 	const [newTodo, setNewTodo] = React.useState('');
 
 	return (
