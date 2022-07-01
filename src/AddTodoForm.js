@@ -1,14 +1,13 @@
-import React from 'react';
+import { useState } from 'react';
 
 const AddTodoForm = ({ onAddTodo }) => {
-	const [todoTitle, setTodoTitle] = React.useState('');
+	const [todoTitle, setTodoTitle] = useState('');
 
 	const handleTitleChange = (event) => {
 		const newTodoTitle = event.target.value;
 		setTodoTitle(newTodoTitle);
 	};
 
-	// Handle "Add Todo Form" Submit
 	const handleAddTodo = (event) => {
 		event.preventDefault();
 		onAddTodo({ title: todoTitle, id: Date.now() });
