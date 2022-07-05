@@ -1,6 +1,6 @@
-import react from "react";
-import TodoListtodo from "./TodoListItem";
-const TodoListData = [
+import TodoListTodo from "./TodoListItem";
+
+/*const todoListData = [
   {
     id: 1,
     title: "Read the book",
@@ -14,15 +14,16 @@ const TodoListData = [
     title: "Send B & R order back",
   },
 ];
+*/
+const TodoList = ({ todoList }) => {
+  // console.log(Object.entries(todoList));
 
-const TodoList = (props) => {
   return (
     <ul>
-      {TodoListData.map(function (item) {
-        return <TodoListtodo todo={item} key={item.id} />;
+      {todoList.map(function (item) {
+        return <TodoListTodo todo={item} key={item.id} />;
       })}
     </ul>
   );
 };
-export { TodoListData };
 export default TodoList;
