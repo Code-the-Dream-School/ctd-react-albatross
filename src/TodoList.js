@@ -15,8 +15,8 @@ const todoList = [
         title: 'Complete assignment',
     },
 ];
-
-const TodoList = () => {
+//Open /src/TodoList.js and update props to use destructuring
+const TodoList = ({ todoList }) => {
     return (
         <ul>
             {todoList.map((todo) => (
