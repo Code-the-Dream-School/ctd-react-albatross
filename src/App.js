@@ -19,18 +19,15 @@ let todoList = [
 function App() {
   return (
     <div>
-      <header>
         <h1>Todo List</h1>
         <hr />
         <ul>
           {todoList.map(function(listItem){
-            return <li>
-                    <span>{listItem.id} </span>
-                    <span>{listItem.title}</span>
+            return <li key={listItem.id}>
+                    {listItem.title}
                   </li>
           })}
         </ul>
-      </header>
     </div>
   );
 }
