@@ -24,18 +24,14 @@ function TodoList(){
 
     return (
         //console.log("Hi! I'm inside todo list")
-        <ul>
-          {todoList.map(function(listItem){
-            return <li>
-                    <span>{listItem.id} </span>
-                    <span>{listItem.title}</span>
+            <ul>
+            {todoList.map(function(listItem){
+                return <li key={listItem.id}>
+                    {listItem.title}
                   </li>
-          })}
-        </ul>
+            })}
+            </ul>
     )
-
-    
-
 }
 
 
