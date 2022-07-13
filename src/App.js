@@ -26,12 +26,12 @@ const App = () => {
 
   //console.log(savedList);
   return (
-    <div>
+    <>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
       <p></p>
       <TodoList todoList={todoList} />
-    </div>
+    </>
   );
 };
 
