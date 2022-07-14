@@ -3,21 +3,21 @@ import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
 
 function App() {
+  const [todoList, setTodoList] = React.useState([]);
 
-  // new state variable newTodo(gets the state) with update function setNewTodo
-  const [newTodo, setNewTodo] = React.useState('');
+  function addTodo(newTodo) {
+
+    setTodoList([...todoList, newTodo])
+  }
 
   return (
     <div>
-      {/* create a level 1 heading Todo List, unordered list and return render Todo List items */}
       <h1>Todo List</h1>
 
-      {/* pass setNewTodo as a call back handler prop */}
-      <AddTodoForm onAddTodo={setNewTodo} />
+      <AddTodoForm onAddTodo={addTodo} />
 
-      {/* paragraph displays the value of newTodo variable */}
-      <p>{newTodo}</p>
-      <TodoList />
+
+      <TodoList todoList={todoList} />
 
     </div>
   );
