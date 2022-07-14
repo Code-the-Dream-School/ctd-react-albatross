@@ -1,23 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
 
-export const AddToDoForm = (props) => {
+export const AddToDoForm = ({onAddToDo}) => {
+    const [ toDoTitle, setToDoTitle ] = useState("");
+
+    const handleTitleChange = (e) => {
+        let newToDoTitle = e.target.value;
+        setToDoTitle(newToDoTitle);
+    }
+
     const handleAddToDo = (e) => {
         e.preventDefault();
-        let toDoTitle = e.target.title.value;
-        console.log(toDoTitle);
-        // instructions indicate that onAddToDo should be passed the variable newToDo, however, after trying that it didn't result in anything happening but when passing in the variable within which the input field value is stored - the page updates accordingly
-        // props.onAddToDo(newToDo); 
-        //DOESN'T WORK - "newToDo is not defined"
-
-        e.target.title.value = '';
-
-        props.onAddToDo(toDoTitle); 
+        onAddToDo({
+            title: toDoTitle,
+            id: Date.now(),
+        }); 
+        setToDoTitle("");
     }
     return (
         <form onSubmit={handleAddToDo}>
             <label htmlFor="toDoTitle">Title:</label>
-            <input id="toDoTitle" name="title" />
-            <button type="submit">Add</button>
+            <input 
+                id="toDoTitle" 
+                name="title" 
+                value={toDoTitle}
+                onChange={handleTitleChange}
+            />
+            <button type="button">Add</button>
         </form>
     )
 }
