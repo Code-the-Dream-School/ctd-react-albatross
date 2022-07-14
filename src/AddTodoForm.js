@@ -1,23 +1,32 @@
 import React from 'react'
 
-// add props as a parameter 
-function AddTodoForm(props) {
+function AddTodoForm({ onAddTodo }) {
+
+    const [todoTitle, setTodoTitle] = React.useState('');
+
+    const handleTitleChange = (event) => {
+        const newTodoTitle = event.target.value;
+
+        setTodoTitle(newTodoTitle)
+    }
+
     const handleAddTodo = (event) => {
         event.preventDefault();
 
-        const todoTitle = event.target.title.value;
-        // invoke the onAddTodo callback prop and pass newTodo-this is the todoTitle as an argument 
-        props.onAddTodo(todoTitle);
+        let todoDetails = {
+            id: Date.now(),
+            title: todoTitle
+        }
 
-        console.log(todoTitle)
+        onAddTodo(todoDetails);
 
-        event.target.reset();
+        setTodoTitle('');
     }
 
     return (
         <form onSubmit={handleAddTodo}>
             <label htmlFor='todoTitle'>Title</label>
-            <input id='todoTitle' name='title' />
+            <input id='todoTitle' name='title' value={todoTitle} onChange={handleTitleChange} />
             <button type='submit'>Add</button>
         </form>
     )
