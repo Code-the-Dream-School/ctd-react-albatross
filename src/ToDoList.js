@@ -1,30 +1,33 @@
 import React from 'react';
+import { ToDoListItem } from './ToDoListItem';
 
-const toDoList = [
+export const toDoList = [
     {
       id: 0,
-      title: 'complete Albatross 1-1',
+      title: 'complete Albatross 1-3',
     },
     {
       id: 1,
-      title: 'wash dishes',
+      title: 'read r2r lesson 1-4',
     },
     {
       id: 2,
-      title: 'finish notes',
+      title: 'submit 1-3',
     },
   ];
 
-export const ToDoList = () => {
+export const ToDoList = (props) => {
     return (
     <ul>
-        {toDoList.map(function(item) {
-          return (
-          <li key={item.id}>
-            <span>{item.title}</span>
-          </li>
-          )
+        {props.list.map((item) => {
+            return (
+                // passing in each item's id and title stored as props.id and props.todo ***CANNOT store as props.key as this results in an error message
+                <ToDoListItem
+                    id={item.id}
+                    todo={item.title}
+                />
+            )
         })}
-      </ul>
+    </ul>
     )
 };
