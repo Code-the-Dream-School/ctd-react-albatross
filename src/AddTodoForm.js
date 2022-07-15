@@ -1,7 +1,7 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 
 
-const AddTodoFrom = ({onAddTodo}) => {
+const AddTodoFrom = ({ onAddTodo }) => {
 
     const [todoTitle, setTodoTitle] = useState("")
 
@@ -20,13 +20,16 @@ const AddTodoFrom = ({onAddTodo}) => {
 
         let listTodo = {
             title: todoTitle,
-            id: Date.now()
+            id: Date.now(),
+            num: 33
         }
-       onAddTodo(listTodo);
-       setTodoTitle('');
+
+        console.log(listTodo.id)
+        onAddTodo(listTodo);
+        setTodoTitle('');
     }
-    
-    return(
+
+    return (
         <form onSubmit={handleAddTodo}>
             <label htmlFor="todoTitle">
                 Title

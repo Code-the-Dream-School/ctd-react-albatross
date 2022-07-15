@@ -3,36 +3,14 @@ import TodoListItem from "./TodoListItem";
 
 
 const ToDoList = ({todoList}) => {
-    // const todoList = [
-    //     {
-    //         id: 1,
-    //         title: "eat lunch",
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "hit the gym",
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "sleep",
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "walk dog",
-    //     },
-    //     {
-    //         id: 5,
-    //         title: "run a mile",
-    //     },
-    // ]
-
-
     return (
         <div>
             <h1>Todo List</h1>
             {todoList.map( (todo) =>
               
                     <TodoListItem
+                    // Changing the "key" to "id" will display the unique id for that task 
+                    // You'll get an error if you change it ig because "key" is req and set by react?
                     key={todo.id}
                     title={todo.title}
                     />
