@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React from 'react';
 
 const AddTodoForm = ({ onAddTodo }) => {
-	const [todoTitle, setTodoTitle] = useState('');
+	const [todoTitle, setTodoTitle] = React.useState('');
 
 	const handleTitleChange = (event) => {
 		const newTodoTitle = event.target.value;
@@ -10,10 +10,7 @@ const AddTodoForm = ({ onAddTodo }) => {
 
 	const handleAddTodo = (event) => {
 		event.preventDefault();
-		onAddTodo({
-			title: todoTitle,
-			id: Date.now(),
-		});
+		onAddTodo({ title: todoTitle, id: Date.now() });
 		setTodoTitle('');
 	};
 
@@ -23,7 +20,6 @@ const AddTodoForm = ({ onAddTodo }) => {
 				<label htmlFor='todoTitle'>Title</label>
 				<input
 					id='todoTitle'
-					type='text'
 					name='title'
 					value={todoTitle}
 					onChange={handleTitleChange}></input>
