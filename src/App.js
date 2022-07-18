@@ -1,19 +1,24 @@
-import React from 'react';
 import { ToDoList } from './ToDoList';
 import { AddToDoForm } from './AddToDoForm';
-import { toDoList } from './ToDoList';
 import { useState } from 'react';
 
 function App() {
-  // can use React.useState(''); OR can import it and desctructure from it directly as below
-  const [newToDo, setNewToDo] = useState('');
+  // establishing toDoList as a stateful object and setting the initial state
+  const [ toDoList, setToDoList ] = useState([]);
+
+  const addToDo = (newToDo) => {
+    // DECLARE the callback handler
+    // this function updates the state of the toDoList array of objects
+    setToDoList([...toDoList, newToDo])
+  }
+
   return (
     <div>
       <h1>To Do List</h1>
-      <AddToDoForm onAddToDo={setNewToDo}/>
-      <p>{newToDo}</p>
-      {/* pass in toDoList to the ToDoList component as props to access the data stored in the toDoList object (ids and titles) */}
-      <ToDoList list={toDoList}/>
+      {/* PASS the callback handler to the form */}
+      <AddToDoForm onAddToDo={addToDo} />
+      {/* PASS the stateful array of objects to the list */}
+      <ToDoList list={toDoList} />
     </div>
   );
 }
