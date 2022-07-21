@@ -20,7 +20,7 @@ const AddTodoForm = ({ onAddTodo }) => {
             <input type="text" name="title" id="todoTitle" value={todoTitle} onChange={handleTitleChange} />
             <button type="submit">Add</button>
         </form>
-    )
+    );
 };
 
 export default AddTodoForm;
