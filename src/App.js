@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
 
@@ -25,7 +24,12 @@ function App() {
   function addTodo(newTodo) {
 
     setTodoList([...todoList, newTodo])
+  }
+  const removeTodo = (id) => {
 
+    const newTodoList = todoList.filter((todo) => todo.title !== id);
+
+    setTodoList(newTodoList);
   }
 
 
@@ -35,8 +39,7 @@ function App() {
 
       <AddTodoForm onAddTodo={addTodo} />
 
-
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
 
     </>
   );
