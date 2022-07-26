@@ -5,6 +5,7 @@ export const AddToDoForm = ({onAddToDo}) => {
     const [ toDoTitle, setToDoTitle ] = useState("");
 
     const handleTitleChange = (e) => {
+        e.preventDefault();
         // update the state of toDoTitle to equal the value of newToDoTitle
         let newToDoTitle = e.target.value;
         setToDoTitle(newToDoTitle);
@@ -32,7 +33,7 @@ export const AddToDoForm = ({onAddToDo}) => {
                 value={toDoTitle}
                 onChange={handleTitleChange}
             />
-            <button type="button">Add</button>
+            <button type="submit">Add</button>
         </form>
     )
 }
