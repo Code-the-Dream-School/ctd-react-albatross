@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { InputWithLabel } from './InputWithLabel';
 
 export const AddToDoForm = ({onAddToDo}) => {
     // establish toDoTitle as a stateful variable and set the initial state
@@ -18,21 +19,16 @@ export const AddToDoForm = ({onAddToDo}) => {
         //CALL BACK the "addToDo" that was declared in App to update state with a new to do list item - this is where the data collected here (toDoTitle) is able to pass back up to App via the callback handler
         onAddToDo({
             title: toDoTitle,
-            id: Date.now(),
+            id: toDoTitle.concat(Date.now()),
         }); 
-
         // reset the value of the input field to a blank string after submit
         setToDoTitle("");
     }
     return (
         <form onSubmit={handleAddToDo}>
-            <label htmlFor="toDoTitle">Title:</label>
-            <input 
-                id="toDoTitle" 
-                name="title" 
-                value={toDoTitle}
-                onChange={handleTitleChange}
-            />
+            <InputWithLabel toDo={toDoTitle} onTitleChange={handleTitleChange}>
+                Title: 
+            </InputWithLabel>
             <button type="submit">Add</button>
         </form>
     )

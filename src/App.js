@@ -22,6 +22,17 @@ function App() {
     // DECLARE the callback handler
     // this function updates the state of the toDoList array of objects
     setToDoList([...toDoList, newToDo]);
+    console.log(newToDo);
+  }
+
+  const removeToDo = (title) => {
+    // create a new to do list including only those to do items whose keys do NOT equal the id passed in as a parameter
+    const updatedToDoList = toDoList.filter(
+      // the logic here is causing EVERY item to be removed on click of the remove button, how do I fix this?
+      (todo) => todo.title !== title
+      );
+
+    setToDoList(updatedToDoList);
   }
 
   return (
@@ -30,7 +41,7 @@ function App() {
       {/* PASS the callback handler to the form */}
       <AddToDoForm onAddToDo={addToDo} />
       {/* PASS the stateful array of objects to the list */}
-      <ToDoList list={toDoList} />
+      <ToDoList list={toDoList} onRemoveToDo={removeToDo}/>
     </>
   );
 }
