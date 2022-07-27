@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 function useSemiPersistentState() {
   const [todoList, setTodoList] = useState(
-    JSON.parse(localStorage.getItem("savedTodoList"))
+    JSON.parse(localStorage.getItem("savedTodoList") || "[]")
   );
 
   useEffect(() => {
@@ -24,13 +24,22 @@ const App = () => {
     setTodoList([...todoList, newTodo]);
   }
 
+  function removeTodo(id) {
+    // console.log(id);
+    const updatedList = todoList.filter((e) => e.id !== id);
+
+    //   deletLi.parentNode.removeChild(deletLi);
+    setTodoList(updatedList);
+    // console.log(updatedList);
+  }
+
   //console.log(savedList);
   return (
     <>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
       <p></p>
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
     </>
   );
 };

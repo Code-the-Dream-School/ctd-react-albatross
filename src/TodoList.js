@@ -1,4 +1,4 @@
-import TodoListTodo from "./TodoListItem";
+import TodoListItem from "./TodoListItem";
 
 /*const todoListData = [
   {
@@ -15,13 +15,15 @@ import TodoListTodo from "./TodoListItem";
   },
 ];
 */
-const TodoList = ({ todoList }) => {
+const TodoList = ({ todoList, onRemoveTodo }) => {
   // console.log(Object.entries(todoList));
 
   return (
     <ul>
       {todoList.map(function (item) {
-        return <TodoListTodo todo={item} key={item.id} />;
+        return (
+          <TodoListItem todo={item} key={item.id} onRemoveTodo={onRemoveTodo} />
+        );
       })}
     </ul>
   );
