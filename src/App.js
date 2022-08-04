@@ -25,11 +25,11 @@ function App() {
     console.log(newToDo);
   }
 
-  const removeToDo = (title) => {
+  const removeToDo = (id) => {
     // create a new to do list including only those to do items whose keys do NOT equal the id passed in as a parameter
     const updatedToDoList = toDoList.filter(
-      // the logic here is causing EVERY item to be removed on click of the remove button, how do I fix this?
-      (todo) => todo.title !== title
+      // the logic here (when passing in id) is causing EVERY item to be removed on click of the remove button, how do I fix this?
+      (todo) => todo.id !== id
       );
 
     setToDoList(updatedToDoList);

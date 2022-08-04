@@ -6,7 +6,6 @@ export const AddToDoForm = ({onAddToDo}) => {
     const [ toDoTitle, setToDoTitle ] = useState("");
 
     const handleTitleChange = (e) => {
-        e.preventDefault();
         // update the state of toDoTitle to equal the value of newToDoTitle
         let newToDoTitle = e.target.value;
         setToDoTitle(newToDoTitle);
@@ -21,6 +20,7 @@ export const AddToDoForm = ({onAddToDo}) => {
             title: toDoTitle,
             id: toDoTitle.concat(Date.now()),
         }); 
+        // console.log(toDoTitle);
         // reset the value of the input field to a blank string after submit
         setToDoTitle("");
     }

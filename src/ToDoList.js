@@ -8,7 +8,7 @@ export const ToDoList = ({list, onRemoveToDo}) => {
             return (
                 <ToDoListItem
                     key={item.id}
-                    todo={item.title}
+                    todo={item}
                     onRemoveToDo={onRemoveToDo}
                 />
             )
