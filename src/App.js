@@ -19,7 +19,7 @@ function App() {
 				2000
 			)
 		).then((results) => {
-			setTodoList({[...results.data.todoList]);
+			setTodoList([...results.data.todoList]);
 			setIsLoading(false);
 		});
 	}, []);
