@@ -24,11 +24,10 @@ function App() {
 					setIsLoading(false);
 				})
 	});
-
 	
 	useEffect(() => {
 		if (!isLoading) {
-			localStorage.setItem('savedTodoList', JSON.stringify(todoList)); // stores data in users computer local storage
+			localStorage.setItem('savedTodoList', JSON.stringify(todoList));
 		}
 	}, [todoList, isLoading]);
 
