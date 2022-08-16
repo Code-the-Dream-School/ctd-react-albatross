@@ -1,9 +1,7 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-const TodoList = (props) => {
-  const { todoList, onRemoveTodo } = props;
-
+const TodoList = ({ todoList, onRemoveTodo }) => {
   return (
     <>
       <ul>
