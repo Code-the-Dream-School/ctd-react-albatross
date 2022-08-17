@@ -3,20 +3,38 @@ import { AddToDoForm } from './AddToDoForm';
 import { useState, useEffect } from 'react';
 
 // create custom hook to load stored todolist from local storage as well as keep it updated as state changes anywhere in the app
-const useSemiPersistentState = (key, initialState) => {
-  const [ toDoList, setToDoList ] = useState(
-    JSON.parse(localStorage.getItem('savedToDoList')) || []
-  );
+// const useSemiPersistentState = (key, initialState) => {
+//   const [ toDoList, setToDoList ] = useState(
+//     JSON.parse(localStorage.getItem('savedToDoList')) || []
+//   );
 
-  useEffect(() => {
-    localStorage.setItem('savedToDoList', JSON.stringify(toDoList))
-  }, [toDoList]);
+//   useEffect(() => {
+//     localStorage.setItem('savedToDoList', JSON.stringify(toDoList))
+//   }, [toDoList]);
 
-  return [toDoList, setToDoList];
-}
+//   return [toDoList, setToDoList];
+// }
 
 function App() {
-  const [toDoList, setToDoList] = useSemiPersistentState();
+  // const [toDoList, setToDoList] = useSemiPersistentState();
+
+  const [ toDoList, setToDoList ] = useState([]);
+  const [ isLoading, setIsLoading ] = useState(true);
+
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      setTimeout(() => resolve({data: {toDoList: JSON.parse(localStorage.getItem('savedToDoList')) || [] }}), 2000);
+    })
+    .then((result) => {console.log(result); setToDoList([...result.data.toDoList]); setIsLoading(false);})
+  }, [])
+
+  useEffect(() => {
+    if(!isLoading) {
+    localStorage.setItem('savedToDoList', JSON.stringify(toDoList))}
+  }, [toDoList]);
+
+
+  
 
   const addToDo = (newToDo) => {
     // DECLARE the callback handler
@@ -41,7 +59,7 @@ function App() {
       {/* PASS the callback handler to the form */}
       <AddToDoForm onAddToDo={addToDo} />
       {/* PASS the stateful array of objects to the list */}
-      <ToDoList list={toDoList} onRemoveToDo={removeToDo}/>
+      {isLoading ? <p>Loading...</p> : <ToDoList list={toDoList} onRemoveToDo={removeToDo}/>}
     </>
   );
 }
