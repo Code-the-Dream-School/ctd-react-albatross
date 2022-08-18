@@ -27,26 +27,25 @@ function App() {
     localStorage.setItem('savedToDoList', JSON.stringify(toDoList))}
   }, [toDoList]);
 
-  // i want to create a function that will take in the newToDo from the Form and create an item in my airtable and then re-fetch the airtable data to display the new item
+  // created a function that takes in the newToDo from the Form and creates an item in the airtable
+  // next - figure out re-fetching the airtable data to display the new item
   const addToDo = useCallback((newToDo) => {
+    // console.log(newToDo);
     base(`Default`).create([
-      // SO CLOSE!!!! this posts [object Object] to the airtable, need to determine what I'm doing wrong here
-      {fields: {Title: newToDo.toString()}}
-    ], function(err, records) {
+      {"fields": {"Title": newToDo.title.toString()}}
+    ], function(err, record) {
       if (err) {
         console.error(err);
         return;
       }
-      records.forEach(function (record) {
-        console.log(record.getId());
-      });
+      console.log(record.getId());
     })
   }, []);
-    // DECLARE the callback handler
-    // this function updates the state of the toDoList array of objects
-    // setToDoList([...toDoList, newToDo]);
-    // console.log(newToDo);
-    // })
+
+  // re-fetch the data each time a new to do item is added to the table...fix this
+  // useEffect(() => {
+  //   addToDo()
+  // }, [addToDo]);
 
   const removeToDo = (id) => {
     // create a new to do list including only those to do items whose keys do NOT equal the id passed in as a parameter
