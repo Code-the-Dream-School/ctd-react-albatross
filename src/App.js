@@ -2,30 +2,22 @@ import { ToDoList } from './ToDoList';
 import { AddToDoForm } from './AddToDoForm';
 import { useState, useEffect } from 'react';
 
-// create custom hook to load stored todolist from local storage as well as keep it updated as state changes anywhere in the app
-// const useSemiPersistentState = (key, initialState) => {
-//   const [ toDoList, setToDoList ] = useState(
-//     JSON.parse(localStorage.getItem('savedToDoList')) || []
-//   );
-
-//   useEffect(() => {
-//     localStorage.setItem('savedToDoList', JSON.stringify(toDoList))
-//   }, [toDoList]);
-
-//   return [toDoList, setToDoList];
-// }
+const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}${process.env.REACT_APP_AIRTABLE_BASE_NAME}`
 
 function App() {
-  // const [toDoList, setToDoList] = useSemiPersistentState();
 
   const [ toDoList, setToDoList ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => resolve({data: {toDoList: JSON.parse(localStorage.getItem('savedToDoList')) || [] }}), 2000);
-    })
-    .then((result) => {console.log(result); setToDoList([...result.data.toDoList]); setIsLoading(false);})
+    fetch(`${url}`, {headers: {Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`}})
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        setToDoList(result.records);
+        setIsLoading(false);
+      })
+      .catch(()=>{console.log('Error')})
   }, [])
 
   useEffect(() => {
