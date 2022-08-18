@@ -18,7 +18,7 @@ export const AddToDoForm = ({onAddToDo}) => {
         //CALL BACK the "addToDo" that was declared in App to update state with a new to do list item - this is where the data collected here (toDoTitle) is able to pass back up to App via the callback handler
         onAddToDo({
             title: toDoTitle,
-            id: toDoTitle.concat(Date.now()),
+            // id: toDoTitle.concat(Date.now()),
         }); 
         // console.log(toDoTitle);
         // reset the value of the input field to a blank string after submit

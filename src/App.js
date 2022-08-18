@@ -1,8 +1,10 @@
 import { ToDoList } from './ToDoList';
 import { AddToDoForm } from './AddToDoForm';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import Airtable from 'airtable';
 
 const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}${process.env.REACT_APP_AIRTABLE_BASE_NAME}`
+const base = new Airtable({apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}`}).base(`${process.env.REACT_APP_AIRTABLE_BASE_ID}`);
 
 function App() {
 
@@ -25,15 +27,26 @@ function App() {
     localStorage.setItem('savedToDoList', JSON.stringify(toDoList))}
   }, [toDoList]);
 
-
-  
-
-  const addToDo = (newToDo) => {
+  // i want to create a function that will take in the newToDo from the Form and create an item in my airtable and then re-fetch the airtable data to display the new item
+  const addToDo = useCallback((newToDo) => {
+    base(`Default`).create([
+      // SO CLOSE!!!! this posts [object Object] to the airtable, need to determine what I'm doing wrong here
+      {fields: {Title: newToDo.toString()}}
+    ], function(err, records) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      records.forEach(function (record) {
+        console.log(record.getId());
+      });
+    })
+  }, []);
     // DECLARE the callback handler
     // this function updates the state of the toDoList array of objects
-    setToDoList([...toDoList, newToDo]);
-    console.log(newToDo);
-  }
+    // setToDoList([...toDoList, newToDo]);
+    // console.log(newToDo);
+    // })
 
   const removeToDo = (id) => {
     // create a new to do list including only those to do items whose keys do NOT equal the id passed in as a parameter
