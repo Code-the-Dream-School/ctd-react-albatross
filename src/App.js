@@ -19,6 +19,7 @@ const App = () => {
         )
             .then((resp) => resp.json())
             .then((data) => {
+                console.log(data);
                 setTodoList(data.records);
                 setIsLoading(false);
             });
@@ -43,23 +44,26 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" exact>
-                    <header>
-                        <h1>Todo List</h1>
-                    </header>
-                    <AddTodoForm onAddTodo={addTodo} />
-                    {isLoading ? (
-                        <span>Loading ...</span>
-                    ) : (
-                        <TodoList
-                            todoList={todoList}
-                            onRemoveTodo={removeTodo}
-                        />
-                    )}
-                </Route>
-                <Route path="new">
-                    <h1>New Todo List</h1>
-                </Route>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <header>
+                                <h1>Todo List</h1>
+                            </header>
+                            <AddTodoForm onAddTodo={addTodo} />
+                            {isLoading ? (
+                                <span>Loading ...</span>
+                            ) : (
+                                <TodoList
+                                    todoList={todoList}
+                                    onRemoveTodo={removeTodo}
+                                />
+                            )}
+                        </>
+                    }
+                ></Route>
+                <Route path="/new" element={<h1>New Todo List</h1>}></Route>
             </Routes>
         </BrowserRouter>
     );
