@@ -2,6 +2,7 @@ import { ToDoList } from './ToDoList';
 import { AddToDoForm } from './AddToDoForm';
 import { useState, useEffect, useCallback } from 'react';
 import Airtable from 'airtable';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}${process.env.REACT_APP_AIRTABLE_BASE_NAME}`
 const base = new Airtable({apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}`}).base(`${process.env.REACT_APP_AIRTABLE_BASE_ID}`);
@@ -58,13 +59,26 @@ function App() {
   }
 
   return (
-    <>
-      <h1>To Do List</h1>
-      {/* PASS the callback handler to the form */}
-      <AddToDoForm onAddToDo={addToDo} />
-      {/* PASS the stateful array of objects to the list */}
-      {isLoading ? <p>Loading...</p> : <ToDoList list={toDoList} onRemoveToDo={removeToDo}/>}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path={"/"} 
+          element={
+            <>
+              <h1>To Do List</h1>
+              <AddToDoForm onAddToDo={addToDo} />
+              {isLoading ? <p>Loading...</p> : <ToDoList list={toDoList} onRemoveToDo={removeToDo}/>}
+            </>}
+          exact>
+        </Route>
+        <Route
+          path="/new"
+          element={<h1>New To Do List</h1>}
+          exact
+          >
+          </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
