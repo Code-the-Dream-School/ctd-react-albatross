@@ -1,8 +1,9 @@
 import React from 'react'
 
 
-export default function ToDoListItem(props){
+export default function ToDoListItem({todo}){
+  const {title} = todo
   return (
-    <li>{props.todo.title}</li>
+    <li>{title}</li>
   )
 }
