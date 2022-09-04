@@ -15,24 +15,24 @@ In this lesson, you will learn how to save your list in local browser storage so
 - [ ] Open `/src/App.js`
 - [ ] Define a `useEffect` React hook with `todoList` as a dependency
 - [ ] Inside the side-effect handler function, save the `todoList` inside `localStorage` with the key `"savedTodoList"`
-    - Hint: `localStorage.setItem` method
+  - Hint: `localStorage.setItem` method
 - [ ] Run your application and view in browser
-    - [ ] Enter a new todo in "Add Todo" form and submit
-    - [ ] Open your Local Storage panel in the DevTools
-        - In Chrome: DevTools > Application > Local Storage > localhost
-    - [ ] Verify that your `"savedTodoList"` item exists
-    - [ ] Notice that the value, however, is not readable (see below)
+  - [ ] Enter a new todo in "Add Todo" form and submit
+  - [ ] Open your Local Storage panel in the DevTools
+    - In Chrome: DevTools > Application > Local Storage > localhost
+  - [ ] Verify that your `"savedTodoList"` item exists
+  - [ ] Notice that the value, however, is not readable (see below)
 
 ![local storage object](https://github.com/Code-the-Dream-School/ctd-react-egret/raw/main/instructions/assets/section-1/lesson-1-5/local-storage-object.png)
 
 - [ ] Open `/src/App.js`
 - [ ] Update your side-effect function to convert `todoList` to a string before saving in `localStorage`
-    - Hint: `JSON.stringify` method
+  - Hint: `JSON.stringify` method
 - [ ] View your application in browser
-    - [ ] Clear your Local Storage
-        - In Chrome: DevTools > Application > Storage > Click "Clear site data"
-    - [ ] Repeat the same steps from above
-    - [ ] Notice that the value is completely readable as a string (see below)
+  - [ ] Clear your Local Storage
+    - In Chrome: DevTools > Application > Storage > Click "Clear site data"
+  - [ ] Repeat the same steps from above
+  - [ ] Notice that the value is completely readable as a string (see below)
 
 ![Local Storage with List saved as Object](https://github.com/Code-the-Dream-School/ctd-react-egret/raw/main/instructions/assets/section-1/lesson-1-5/local-storage-string.png)
 
@@ -42,17 +42,17 @@ This is because we wrote the list data to Local Storage but we aren't reading it
 
 - [ ] Open `/src/App.js`
 - [ ] Update the default state for `todoList` to read your `"savedTodoList"` item from `localStorage`
-    - Hint: `localStorage.getItem` method
+  - Hint: `localStorage.getItem` method
 - [ ] View your application in browser
-    - [ ] Notice that there is an error, `todoList` is not an Array
+  - [ ] Notice that there is an error, `todoList` is not an Array
 
 How could our list not be an Array? Right! We turned it into a string before saving in Local Storage. So now that we're ready to use the value, we need to turn it back into an Array.
 
 - [ ] Open `/src/App.js`
 - [ ] Update your default state to parse the value of the `"savedTodoList"` item
-    - Hint: `JSON.parse` method
+  - Hint: `JSON.parse` method
 - [ ] View your application in browser
-    - [ ] Notice that your previous todo item(s) are still visible after refreshing the page
+  - [ ] Notice that your previous todo item(s) are still visible after refreshing the page
 
 ### Create Custom Hook
 
@@ -61,9 +61,9 @@ How could our list not be an Array? Right! We turned it into a string before sav
 - [ ] Cut (copy/remove) the `useState` and `useEffect` hooks from `App` into `useSemiPersistentState`
 - [ ] Add a `return` statement in `useSemiPersistentState` that returns the `todoList` state variable and setter in an Array (just like how it's returned from the `useState` hook)
 - [ ] Update `App` to use the new custom hook
-    - Hint: Copy the `useState` hook from before, but change `useState` to the custom hook `useSemiPersistentState` (no arguments)
+  - Hint: Copy the `useState` hook from before, but change `useState` to the custom hook `useSemiPersistentState` (no arguments)
 - [ ] View your application in browser
-    - [ ] Verify that your Todo List still appears correctly
+  - [ ] Verify that your Todo List still appears correctly
 
 ### Fragments
 
