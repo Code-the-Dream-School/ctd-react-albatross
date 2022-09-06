@@ -1,7 +1,6 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-
 const ToDoList = ({ todoList, onRemoveTodo }) => {
     return (
         <div>
