@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import AddTodoForm from './AddTodoForm';
+import Nav from './Nav'
 import TodoList from './TodoList';
-import './TodoListItem.module.css';
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 					path='/'
 					element={
 						<div>
+							<Nav />
 							<h1>Todo List</h1>
 							<AddTodoForm onAddTodo={addTodo} />
 							{isLoading ? (

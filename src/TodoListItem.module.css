@@ -1,71 +1,10 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.ListItem {
+	color: rgb(2, 4, 6);
+	padding: 20px;
+	display: inline-flex;
+	margin-top: 25px;
 }
 
-body {
-	background-color: rgb(184, 184, 184);
-	color: rgb(255, 255, 255);
-	font-size: 1.25rem;
-	font-weight: lighter;
-}
-
-h1, form, li {
-    padding: 10px;
+.listItemContainer {
 	text-align: center;
-	color: rgb(11, 113, 196);
 }
-
-label {
-	color: rgb(0, 0, 0);
-}
-
-button {
-	background-color: bisque;
-	border-radius: 4px;
-	border-width: 0;
-	color: #000000;
-	cursor: pointer;
-	font-size: 14px;
-	font-weight: 800;
-	margin: 0 10px;
-	padding: 8px 12px;
-	text-align: center;
-	transition: all 200ms;
-}
-
-input {
-	background-color: bisque;
-	color: black;
-}
-
-/* Navbar */
-
-header {
-	margin: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 60px;
-	padding: 0 2rem;
-	background-color: rgba(59, 59, 59, 0.925);
-	color:bisque;
-	position: sticky;
-	top: 0;
-	z-index: 50;
-}
-
-nav a {
-	margin: 0 2rem;
-	padding: 0 3rem;
-	text-decoration: none;
-    color:bisque;
-}
-
-nav a:hover {
-	color:rgb(221, 133, 26);
-}
-
-/* Form */
