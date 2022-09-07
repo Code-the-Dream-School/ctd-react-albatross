@@ -3,10 +3,9 @@ import React from "react";
 
 const TodoListItem = (props) => {
     return (
-        <div> 
-            {props.id}
+        <li> 
             {props.title}
-        </div>
+        </li>
     )
 }
 
