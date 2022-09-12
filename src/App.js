@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import style from "./Header.module.css";
 
 const App = () => {
   const addTodo = (newTodo) => {
@@ -57,8 +58,7 @@ const App = () => {
           path="/"
           element={
             <>
-              <h1>Todo List</h1>
-              <hr />
+              <h1 className={style.Header}>My Todo List</h1>
 
               {isLoading ? (
                 <p>Loading ...</p>
