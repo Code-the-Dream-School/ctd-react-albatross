@@ -6,7 +6,7 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
     <li className={style.ListItem}>
       <span className={style.text}>{todo.title}</span>
       <button onClick={() => onRemoveTodo(todo.id)} className={style.btn}>
-        Remove
+        Delete
       </button>
     </li>
   );

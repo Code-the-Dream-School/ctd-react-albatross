@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import style from "./InputWithLabel.module.css";
 
 const InputWithLabel = ({
   id,
@@ -19,6 +20,7 @@ const InputWithLabel = ({
     <>
       <label htmlFor={id}>{children}</label>
       <input
+        className={style.input}
         ref={inputRef}
         id={id}
         type={type}
@@ -27,7 +29,7 @@ const InputWithLabel = ({
         value={value}
         onChange={onChange}
       />
-      <input type="submit" value="Add" />
+      <input type="submit" value="+ Add Todo" className={style.btn} />
     </>
   );
 };
