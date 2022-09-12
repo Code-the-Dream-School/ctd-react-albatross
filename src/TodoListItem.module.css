@@ -4,13 +4,13 @@
   row-gap: 1em;
   column-gap: 2em;
   margin-bottom: 1em;
-
-  background-color: rgb(250 218 221 /75%);
+  background-color: rgb(250 224 51 / 50%);
 }
 
 .text {
   font-family: "Poppins", sans-serif;
-  color: rgb(95 77 67);
+  color: rgb(35 117 67);
+  font-size: 1.5rem;
 }
 
 .btn {

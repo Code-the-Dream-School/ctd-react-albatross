@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import style from "./Header.module.css";
+import style from "./App.module.css";
 
 const App = () => {
   const addTodo = (newTodo) => {
@@ -58,15 +58,17 @@ const App = () => {
           path="/"
           element={
             <>
-              <h1 className={style.Header}>My Todo List</h1>
+              <div className={style.background}>
+                <h1 className={style.header}>My Todo List</h1>
 
-              {isLoading ? (
-                <p>Loading ...</p>
-              ) : (
-                <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-              )}
+                {isLoading ? (
+                  <p>Loading ...</p>
+                ) : (
+                  <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+                )}
 
-              <AddTodoForm onAddTodo={addTodo} />
+                <AddTodoForm onAddTodo={addTodo} />
+              </div>
             </>
           }
         />

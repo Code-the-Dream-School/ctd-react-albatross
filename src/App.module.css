@@ -1,0 +1,25 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+.background {
+  background-image: url("./images/thomas-verbruggen-5A06OWU6Wuc-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.header {
+  margin-top: 0;
+  padding: 1%;
+  border-bottom: solid rgb(35 117 67);
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  font-size: 3em;
+  color: rgb(35 117 67);
+}
