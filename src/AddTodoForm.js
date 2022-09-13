@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
+import style from './TodoListItem.module.css';
 
 const AddTodoForm = ({ onAddTodo }) => {
     const [todoTitle, setTodoTitle] = useState('');
@@ -11,21 +12,39 @@ const AddTodoForm = ({ onAddTodo }) => {
 
     const handleAddTodo = (event) => {
         event.preventDefault();
-        onAddTodo({ title: todoTitle, id: Date.now() });
+        onAddTodo({ fields: { Title: todoTitle }, id: Date.now() });
         setTodoTitle('');
     };
 
     return (
-        <form onSubmit={handleAddTodo}>
-            <InputWithLabel
-                todoTitle={todoTitle}
-                handleTitleChange={handleTitleChange}
-                autoFocus
-            >
-                <span>Title: </span>
-            </InputWithLabel>
-            <button type="submit">Add</button>
-        </form>
+        <div className={style.container}>
+            <form onSubmit={handleAddTodo}>
+                <InputWithLabel
+                    todoTitle={todoTitle}
+                    handleTitleChange={handleTitleChange}
+                    autoFocus
+                >
+                    <span>Title: </span>
+                </InputWithLabel>
+                <button className={style.btn} type="submit">
+                    Add
+                </button>
+            </form>
+            <footer>
+                <div className={style.footer}>
+                    <h6>
+                        Coded with Love by{' '}
+                        <a
+                            href="http://www.rixiobarrios.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Rixio Barrios
+                        </a>
+                    </h6>
+                </div>
+            </footer>
+        </div>
     );
 };
 

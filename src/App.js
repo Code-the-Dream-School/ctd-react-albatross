@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
+import style from './TodoListItem.module.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         )
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setTodoList(data.records);
                 setIsLoading(false);
             });
@@ -49,7 +50,7 @@ const App = () => {
                     element={
                         <>
                             <header>
-                                <h1>Todo List</h1>
+                                <h1 className={style.title}>Todo List</h1>
                             </header>
                             <AddTodoForm onAddTodo={addTodo} />
                             {isLoading ? (

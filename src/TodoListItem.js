@@ -1,10 +1,15 @@
 import React from 'react';
+import style from './TodoListItem.module.css';
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
     return (
-        <li>
-            <span>{todo.fields.Title}</span>
-            <button type="button" onClick={() => onRemoveTodo(todo.id)}>
+        <li className={style.ListItem}>
+            <span className={style.item}>{todo.fields.Title}</span>
+            <button
+                className={style.btn}
+                type="button"
+                onClick={() => onRemoveTodo(todo.id)}
+            >
                 Remove
             </button>
         </li>
