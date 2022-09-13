@@ -10,8 +10,11 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  overflow: hidden;
   width: 100%;
+
+  /* add scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .header {
