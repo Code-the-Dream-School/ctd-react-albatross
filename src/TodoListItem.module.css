@@ -1,0 +1,23 @@
+.ListItem {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1em;
+  column-gap: 2em;
+  margin-bottom: 1em;
+  padding-left: 1%;
+  background-color: rgb(239 233 147);
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  color: rgb(35 117 67);
+  font-size: 1.5rem;
+}
+
+.trash {
+  color: rgb(35 117 67);
+}
+
+.btn {
+  margin-left: auto;
+}

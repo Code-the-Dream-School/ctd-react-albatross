@@ -1,0 +1,11 @@
+.input {
+  flex-grow: 1;
+  overflow: auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  padding-left: 1%;
+}
+
+.btn {
+  margin-left: auto;
+}
