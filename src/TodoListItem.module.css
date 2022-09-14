@@ -21,6 +21,7 @@
 .btn {
   background: none;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .btn:hover {

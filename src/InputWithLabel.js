@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import style from "./InputWithLabel.module.css";
+import { FaPlus } from "react-icons/fa";
 
 const InputWithLabel = ({
   id,
@@ -29,7 +30,10 @@ const InputWithLabel = ({
         value={value}
         onChange={onChange}
       />
-      <input type="submit" value="+ Add Todo" className={style.btn} />
+
+      <button type="submit" className={style.btn}>
+        <FaPlus className={style.plus} /> Add Todo
+      </button>
     </>
   );
 };
