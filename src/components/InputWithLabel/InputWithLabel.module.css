@@ -7,5 +7,12 @@
 }
 
 .btn {
+  background: none;
   margin-left: auto;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(35 117 67);
+  color: white;
 }
