@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  /* background-color: rgb(230, 244, 209); */
+  color: black;
+}
+.about {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0;
+  }
+}

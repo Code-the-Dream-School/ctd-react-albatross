@@ -1,0 +1,32 @@
+.container_header {
+  display: flex;
+  /* flex-direction: column; */
+  padding-top: 3px;
+  padding-bottom: 20px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: space-around;
+}
+
+.headerImage {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.todoList {
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .container_header {
+    flex-direction: column;
+    padding-bottom: 3px;
+    align-items: center;
+  }
+  .todoList {
+    font-size: 16px;
+  }
+}

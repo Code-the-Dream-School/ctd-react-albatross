@@ -1,3 +1,33 @@
 .ListItem {
-  color: red;
+  color: black;
+  background: #8b898931;
+  margin: 5px;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.remove_button {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: auto;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .listItem {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+
+  .remove_button {
+    align-items: center;
+  }
 }

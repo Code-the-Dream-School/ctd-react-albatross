@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: poppins, sans-serif;
 }
 
 body {
@@ -12,11 +13,23 @@ body {
   display: flex;
   /* align-items: center; */
   flex-direction: column;
-  min-height: 100vh;
-  max-width: 500px;
+  height: 700px;
+  max-width: 450px;
   margin: 30px auto;
-  border: 1px solid black;
+  border: 2px solid black;
+  box-shadow: 0 2.5px rgba(104, 104, 104, 0.8);
   padding: 30px;
   border-radius: 5px;
-  background-color: #e3e5f3;
+  background-color: rgb(228, 216, 202);
+  color: #fffeef;
+}
+
+.loading {
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100%;
+  }
 }
