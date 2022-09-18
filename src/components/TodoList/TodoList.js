@@ -1,5 +1,5 @@
 import React from "react";
-import TodoListItem from "./TodoListItem";
+import TodoListItem from "../TodoListItem/TodoListItem";
 import style from "./TodoList.module.css";
 
 const TodoList = ({ todoList, onRemoveTodo }) => {

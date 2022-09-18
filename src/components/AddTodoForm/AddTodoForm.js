@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputWithLabel from "./InputWithLabel";
+import InputWithLabel from "../InputWithLabel/InputWithLabel";
 import style from "./AddTodoForm.module.css";
 
 const AddTodoForm = ({ onAddTodo }) => {
