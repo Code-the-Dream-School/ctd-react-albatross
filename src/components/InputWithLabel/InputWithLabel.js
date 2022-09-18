@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import style from "./InputWithLabel.module.css";
 import { FaPlus } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const InputWithLabel = ({
   id,
@@ -36,6 +37,16 @@ const InputWithLabel = ({
       </button>
     </>
   );
+};
+
+InputWithLabel.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  children: PropTypes.string,
 };
 
 export default InputWithLabel;

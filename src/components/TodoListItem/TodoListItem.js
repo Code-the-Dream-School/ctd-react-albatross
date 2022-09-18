@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./TodoListItem.module.css";
 import { FaRegTrashAlt } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
   return (
@@ -11,6 +12,11 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
       </button>
     </li>
   );
+};
+
+TodoListItem.propTypes = {
+  todo: PropTypes.object,
+  onRemoveTodo: PropTypes.func,
 };
 
 export default TodoListItem;
