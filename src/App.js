@@ -43,11 +43,18 @@ const App = () => {
     }
   }, [todoList]);
 
-  const removeTodo = (id) => {
-    const removeItem = todoList.filter((todoList) => {
-      return todoList.id !== id;
-    });
-    setTodoList(removeItem);
+  const removeTodo = async (id) => {
+    await fetch(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        },
+      }
+    );
+
+    setTodoList(todoList.filter((todoList) => todoList.id !== id));
   };
 
   return (
