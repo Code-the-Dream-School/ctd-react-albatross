@@ -17,9 +17,8 @@ const AddTodoForm = ({ onAddTodo }) => {
         onAddTodo({ fields: { Title: todoTitle }, id: Date.now() });
         setTodoTitle('');
     };
-    // Below the AddTodoForm function, define the propTypes property of that function as a new object
+
     AddTodoForm.propTypes = {
-        // Inside the object, define a property with key onAddTodo (prop name) and value PropTypes.func (function data type)
         onAddTodo: PropTypes.func,
     };
 
