@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import TodoList from './TodoList';
-import AddTodoForm from './AddTodoForm';
+import TodoList from './components/TodoList';
+import AddTodoForm from './components/AddTodoForm';
 import style from './TodoListItem.module.css';
-import TodoContainer from './components/TodoContainer.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
         )
             .then((resp) => resp.json())
             .then((data) => {
-                // console.log(data);
                 setTodoList(data.records);
                 setIsLoading(false);
             });
