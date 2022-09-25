@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
 import style from './AddTodoForm.module.css';
+import PropTypes from 'prop-types';
 
 export default function AddTodoForm({ onAddTodo }) {
   const [todoTitle, setTodoTitle] = useState('');
@@ -28,9 +29,18 @@ export default function AddTodoForm({ onAddTodo }) {
         Title
       </InputWithLabel>
 
-      <button type="submit" className={style.submit}>
+      <button
+        type="submit"
+        //demonstrates re-render that happens on keypress
+        className={console.log('rerender') || style.submit}
+        disabled={todoTitle.length === 0}
+      >
         Add
       </button>
     </form>
   );
 }
+
+AddTodoForm.propTypes = {
+  onAddTodo: PropTypes.func,
+};

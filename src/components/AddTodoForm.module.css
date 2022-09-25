@@ -1,0 +1,20 @@
+.submit {
+  width: 100px;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  color: #731963
+}
+
+input:focus {
+  outline: black;
+}
+
+button {
+  color: #0B3C49;
+  background-color: #CBD2D0;
+}
