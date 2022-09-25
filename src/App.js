@@ -3,9 +3,9 @@ import TodoList from './components/TodoList';
 import AddTodoForm from './components/AddTodoForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;
-
 function App() {
+  const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`;
+
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -22,6 +22,15 @@ function App() {
           id: item.id,
           title: item.fields.Title,
         }));
+        const sortedTodos = todos.sort((a, b) => {
+          if (a.title < b.title) {
+            return -1;
+          } else if (a.title > b.title) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
         setTodoList([...todos]);
         setIsLoading(false);
       });
