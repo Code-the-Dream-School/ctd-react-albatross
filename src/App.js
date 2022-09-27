@@ -87,13 +87,13 @@ const App = () => {
               <div className={style.background}>
                 <h1 className={style.header}>My Todo List</h1>
 
+                <AddTodoForm onAddTodo={addTodo} />
+
                 {isLoading ? (
                   <p>Loading ...</p>
                 ) : (
                   <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
                 )}
-
-                <AddTodoForm onAddTodo={addTodo} />
               </div>
             </>
           }
