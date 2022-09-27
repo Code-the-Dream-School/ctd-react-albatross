@@ -1,0 +1,14 @@
+.ListItem{
+    color: #352f44;
+    font-size: 24px;
+    border-bottom:1px solid #8f8787;
+}
+
+.Button{
+    background: #f9f9f9;
+    color:#352f44;
+    border: 1px solid #8f8787;
+    margin-left: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

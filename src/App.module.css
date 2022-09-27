@@ -1,0 +1,20 @@
+h1{
+    color:#2a2438;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Loading{
+    color:#2a2438;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Body{
+    background-color:#f8bf8a;
+    border: 1px solid #8f8787;
+    width: fit-content;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+}

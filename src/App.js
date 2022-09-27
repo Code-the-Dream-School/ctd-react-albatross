@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import style from "./App.module.css"
 
 
 
@@ -20,10 +21,14 @@ function App() {
         },
       }
     )
-      .then((response) => response.json())
+      .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
-        setTodoList(data.records || []);
+        const todos = data.records.map
+          ((todo) => {
+          return {id:todo.id, title:todo.fields.Title}
+          })
+        console.log(todos)
+        setTodoList(todos);
         setIsLoading(false);
       });
   }, []);
@@ -52,15 +57,17 @@ function App() {
           path="/"
           element={
             <>
+              <div className={style.Body}>
               <h1>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {isLoading ? (
-                <p>
+                <p className={style.Loading}>
                   Loading...
                 </p>
               ) :
                 (<TodoList todoList={todoList} onRemoveTodo={removeTodo} />)
               }
+                </div>
             </>
           }></Route>
         
