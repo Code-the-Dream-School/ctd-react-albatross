@@ -7,10 +7,6 @@ import style from "./App.module.css";
 const App = () => {
   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?sort%5B0%5D%5Bfield%5D=Title&sort%5B0%5D%5Bdirection%5D=asc&view=Grid%20view`;
 
-  const addTodo = (newTodo) => {
-    setTodoList([...todoList, ...newTodo]);
-  };
-
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +20,6 @@ const App = () => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setTodoList(
           data.records.map((record) => ({
             title: record.fields.Title,
@@ -42,6 +37,32 @@ const App = () => {
       );
     }
   }, [todoList]);
+
+  const addTodo = (newTodo) => {
+    const title = newTodo[0].title;
+    const postBody = {
+      fields: {
+        Title: title,
+      },
+      typecast: true,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postBody),
+    };
+    let todo = {};
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        todo.id = data.id;
+        todo.title = data.fields.Title;
+      });
+    setTodoList([...todoList, ...newTodo]);
+  };
 
   const removeTodo = async (id) => {
     const options = {
