@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import style from "./App.module.css";
 
 const App = () => {
+  const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;
+
   const addTodo = (newTodo) => {
     setTodoList([...todoList, ...newTodo]);
   };
@@ -13,15 +15,13 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
-        },
-      }
-    )
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+      },
+    };
+    fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -44,15 +44,13 @@ const App = () => {
   }, [todoList]);
 
   const removeTodo = async (id) => {
-    await fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
-        },
-      }
-    );
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+      },
+    };
+    await fetch(url + `/${id}`, options);
 
     setTodoList(todoList.filter((todoList) => todoList.id !== id));
   };
