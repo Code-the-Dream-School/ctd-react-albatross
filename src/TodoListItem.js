@@ -4,7 +4,7 @@ const TodoListItem = ({ todo, onRemoveTodo })=>{
     return (
         <>
             <li>
-                {todo.fields.Title}
+                <span>{todo.title}</span>
                 <button type="button" onClick={() => onRemoveTodo(todo.id)}>
                     Remove
                 </button>
@@ -12,5 +12,7 @@ const TodoListItem = ({ todo, onRemoveTodo })=>{
         </>
     );
 }
+
+
 
 export default TodoListItem;
