@@ -23,10 +23,15 @@ function App() {
     )
       .then((resp) => resp.json())
       .then((data) => {
+
         const todos = data.records.map
           ((todo) => {
           return {id:todo.id, title:todo.fields.Title}
           })
+
+        const todos = data.records.map((todo) => {
+          return {id:todo.id, title:todo.fields.Title}
+        })
         console.log(todos)
         setTodoList(todos);
         setIsLoading(false);
