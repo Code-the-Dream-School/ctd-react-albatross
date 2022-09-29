@@ -71,7 +71,10 @@ const App = () => {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
       },
     };
-    await fetch(url + `/${id}`, options);
+    await fetch(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
+      options
+    );
 
     setTodoList(todoList.filter((todoList) => todoList.id !== id));
   };
