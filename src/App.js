@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import Home from "./Home";
 import TodoList from "./components/TodoList/TodoList";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -92,9 +93,7 @@ const App = () => {
           element={
             <>
               <Navbar />
-              <div className="background">
-                <h1 className="header">Home</h1>
-              </div>
+              <Home />
             </>
           }
         />

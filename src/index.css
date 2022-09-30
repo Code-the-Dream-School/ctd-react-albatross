@@ -26,15 +26,16 @@ html {
   padding: 1%;
   border-bottom: solid rgb(35 117 67);
   text-align: center;
-  font-family: "Abril Fatface", cursive;
+  font-family: "Secular One", sans-serif;
   font-size: 3em;
   background-color: white;
   color: rgb(35 117 67);
 }
 
 .nav {
-  background-color: rgb(35 117 67);
-  color: white;
+  background-color: white;
+  color: rgb(50 82 123);
+
   display: flex;
   justify-content: space-between;
   align-items: stretch;
