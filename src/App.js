@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TodoList from "./components/TodoList/TodoList";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import style from "./App.module.css";
+import "./index.css";
 
 const App = () => {
   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?sort%5B0%5D%5Bfield%5D=Title&sort%5B0%5D%5Bdirection%5D=asc&view=Grid%20view`;
@@ -90,8 +90,8 @@ const App = () => {
           path="/"
           element={
             <>
-              <div className={style.background}>
-                <h1 className={style.header}>My Todo List</h1>
+              <div className="background">
+                <h1 className="header">My Todo List</h1>
 
                 <AddTodoForm onAddTodo={addTodo} />
 
