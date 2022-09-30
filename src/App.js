@@ -39,6 +39,7 @@ const App = () => {
   }, [todoList]);
 
   const addTodo = (newTodo) => {
+    //POST new record to Airtable given title field value
     const title = newTodo[0].title;
     const postBody = {
       fields: {
@@ -61,10 +62,12 @@ const App = () => {
         todo.id = data.id;
         todo.title = data.fields.Title;
       });
+    //set todoList state to new Array containing added record
     setTodoList([...todoList, ...newTodo]);
   };
 
   const removeTodo = async (id) => {
+    //DELETE record from Airtable given id
     const options = {
       method: "DELETE",
       headers: {
@@ -75,7 +78,7 @@ const App = () => {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
       options
     );
-
+    //set todoList state to new Array not containing removed record
     setTodoList(todoList.filter((todoList) => todoList.id !== id));
   };
 

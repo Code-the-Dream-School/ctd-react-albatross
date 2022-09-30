@@ -15,6 +15,7 @@ const InputWithLabel = ({
   const inputRef = useRef(null);
 
   useEffect(() => {
+    //callback function that does Focus input ref
     inputRef.current.focus();
   }, []);
 

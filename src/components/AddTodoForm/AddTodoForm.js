@@ -7,20 +7,22 @@ const AddTodoForm = ({ onAddTodo }) => {
   const [todoTitle, setTodoTitle] = useState("");
 
   const handleTitleChange = (event) => {
+    //set todoTitle to given value from event
     const newTodoTitle = event.target.value;
     setTodoTitle(newTodoTitle);
   };
 
   const handleAddTodo = (event) => {
+    //prevent page refresh
     event.preventDefault();
-
+    //invoke callback prop onAddTodo and pass todoTitle from state
     onAddTodo([
       {
         title: todoTitle,
         id: Date.now(),
       },
     ]);
-
+    //reset todoTitle value to an empty String
     setTodoTitle("");
   };
 
