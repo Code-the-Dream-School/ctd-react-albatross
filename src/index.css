@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
@@ -24,6 +28,44 @@ html {
   text-align: center;
   font-family: "Abril Fatface", cursive;
   font-size: 3em;
+  background-color: white;
+  color: rgb(35 117 67);
+}
+
+.nav {
+  background-color: rgb(35 117 67);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.site-name {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.nav li:hover {
   background-color: white;
   color: rgb(35 117 67);
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 import TodoList from "./components/TodoList/TodoList";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -90,6 +91,18 @@ const App = () => {
           path="/"
           element={
             <>
+              <Navbar />
+              <div className="background">
+                <h1 className="header">Home</h1>
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="/todolist"
+          element={
+            <>
+              <Navbar />
               <div className="background">
                 <h1 className="header">My Todo List</h1>
 
@@ -104,7 +117,17 @@ const App = () => {
             </>
           }
         />
-        <Route path="/new" element={<h1>New Todo List</h1>} />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <div className="background">
+                <h1 className="header">About</h1>
+              </div>
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
