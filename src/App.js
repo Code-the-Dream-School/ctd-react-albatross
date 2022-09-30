@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Home from "./components/Home/Home";
 import TodoList from "./components/TodoList/TodoList";
-import About from "./About";
+import About from "./components/About/About";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
