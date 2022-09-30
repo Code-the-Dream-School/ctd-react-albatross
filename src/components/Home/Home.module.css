@@ -1,19 +1,18 @@
-.background {
+.body {
   background-image: url("./renato-ramos-puma-jMJSWuO2RaY-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
   width: 100%;
 
-  /* add scroll */
-  /* overflow-x: hidden;
-  overflow-y: auto; */
+  display: flex;
+  flex-direction: column;
+  /* border: solid yellow 3px; */
 }
 
 .header {
   margin: 0 10%;
-  padding: 5% 1%;
+  padding: 5% 1% 0 1%;
 
   text-align: center;
   font-family: "Secular One", sans-serif;
@@ -23,15 +22,9 @@
   /* border: solid green 3px; */
 }
 
-.body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  /* border: solid yellow 3px; */
-}
-
 .p {
   margin: 0 10%;
+  padding: 5% 0;
   font-family: "Secular One", sans-serif;
   /* font-family: "Poppins", sans-serif; */
   font-size: 1.5rem;
@@ -43,4 +36,11 @@
   color: white;
   list-style: none;
   /* border: solid blue 5px; */
+}
+
+@media (min-width: 800px) {
+  .body {
+    background-size: cover;
+    background-position: top;
+  }
 }
