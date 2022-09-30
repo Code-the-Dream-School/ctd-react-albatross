@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Home from "./components/Home/Home";
 import TodoList from "./components/TodoList/TodoList";
+import About from "./About";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
@@ -121,9 +122,7 @@ const App = () => {
           element={
             <>
               <Navbar />
-              <div className="background">
-                <h1 className="header">About</h1>
-              </div>
+              <About />
             </>
           }
         />
