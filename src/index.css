@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    rgb(177 156 217),
+    rgb(231 84 128),
+    rgb(255 131 0),
+    rgb(254 216 177),
+    rgb(255 229 124)
+  );
+}
+
 body,
 html {
   margin: 0;
@@ -9,7 +20,7 @@ html {
 }
 
 .background {
-  background-image: url("./images/thomas-verbruggen-5A06OWU6Wuc-unsplash.jpg");
+  background-image: url("./images/renato-ramos-puma-lKdLVkZJdPM-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,14 +33,15 @@ html {
 }
 
 .header {
-  margin-top: 0;
+  margin: 0;
   padding: 1%;
-  border-bottom: solid rgb(35 117 67);
+  border-top: solid rgb(14 75 239) 5px;
   text-align: center;
   font-family: "Secular One", sans-serif;
   font-size: 3em;
-  background-color: white;
-  color: rgb(35 117 67);
+  background-image: var(--gradient);
+  background-clip: text;
+  color: transparent;
 }
 
 .nav {
@@ -69,4 +81,14 @@ html {
 .nav li:hover {
   background-color: white;
   color: rgb(35 117 67);
+}
+
+@media (min-width: 800px) {
+  .background {
+    background-size: cover;
+    background-position: top;
+  }
+  .header {
+    font-size: 5rem;
+  }
 }
