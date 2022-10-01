@@ -5,6 +5,7 @@
 :root {
   --gradient: linear-gradient(
     45deg,
+    rgb(120 81 169),
     rgb(177 156 217),
     rgb(231 84 128),
     rgb(255 131 0),
