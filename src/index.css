@@ -1,3 +1,7 @@
+/********************************
+Styling for App.js and Navbar.js 
+********************************/
+
 * {
   box-sizing: border-box;
 }
@@ -80,8 +84,8 @@ html {
 }
 
 .nav li:hover {
-  background-color: white;
-  color: rgb(35 117 67);
+  background-color: rgb(50 82 123);
+  color: white;
 }
 
 @media (min-width: 800px) {

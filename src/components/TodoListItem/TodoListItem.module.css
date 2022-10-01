@@ -9,23 +9,32 @@
 }
 
 .text {
+  flex: auto;
+  padding-top: 1%;
   font-family: "Poppins", sans-serif;
-  color: rgb(35 117 67);
+  color: rgb(50 82 123);
   font-size: 1.5rem;
 }
 
 .trash {
-  color: rgb(35 117 67);
+  color: rgb(50 82 123);
 }
 
 .btn {
+  display: flex;
   background: none;
-  margin-left: auto;
+  margin: 1% 1% 1% auto;
+  padding: 1%;
+  border-radius: 20%;
   cursor: pointer;
 }
 
+.btn > svg {
+  align-items: center;
+}
+
 .btn:hover {
-  background-color: rgb(35 117 67);
+  background-color: rgb(50 82 123);
 }
 
 .btn:hover > svg {
