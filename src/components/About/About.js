@@ -12,7 +12,8 @@ const About = () => {
       <h1 className={style.header}>About Me</h1>
       <p className={style.p}>
         Hi, I'm Amy! I began learning to code with Code the Dream in January
-        2022.
+        2022. Thanks to Code the Dream School, I have been able to learn HTML,
+        CSS, JavaScript, and React.js.
         <br></br>
         <br></br>Pronouns: she/her
       </p>
