@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./Home.module.css";
 import { FaReact } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -28,35 +26,6 @@ const Home = () => {
           </a>
           .
         </p>
-      </div>
-      <div className={style.social}>
-        Hello World!
-        <img
-          src="images/renato-ramos-puma-S4MjllDvauE-unsplash.jpg"
-          alt=""
-          className={style.img}
-        />
-        <p className={style.connect}>Want to connect?</p>
-        <ul className={style.icons}>
-          <li>
-            <a
-              href="https://github.com/SandovalAmy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/amyjensandoval/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
-          </li>
-        </ul>
       </div>
     </>
   );

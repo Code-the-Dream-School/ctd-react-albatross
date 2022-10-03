@@ -32,65 +32,9 @@
   color: white;
 }
 
-.social {
-  padding-top: 5%;
-  margin: 5%;
-  text-align: center;
-  font-family: "Secular One", sans-serif;
-  font-size: 2rem;
-  color: rgb(50 82 123);
-  border: solid rgb(50 82 123) 5px;
-}
-
-.img {
-  margin: 0;
-  padding: 1% 0;
-  max-width: 90%;
-  border-radius: 25%;
-}
-
-.connect {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-}
-
-.icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
-  color: white;
-  font-size: 2rem;
-  list-style: none;
-}
-
-.icons li {
-  margin: 0 1%;
-  padding: 0 3%;
-}
-
-.icons a {
-  text-decoration: none;
-}
-
 @media (min-width: 800px) {
   .welcome {
     background-size: cover;
     background-position: top;
-  }
-}
-
-@media (min-width: 1100px) {
-  .social {
-    padding: 5% 0;
-  }
-
-  .img {
-    float: right;
-    margin-right: 5%;
-    max-width: 500px;
-    max-height: 500px;
   }
 }
