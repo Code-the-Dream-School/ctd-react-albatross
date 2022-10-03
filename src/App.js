@@ -96,7 +96,7 @@ const App = () => {
             <>
               <Navbar />
               <Home />
-
+              <About />
               <Footer />
             </>
           }
@@ -117,15 +117,6 @@ const App = () => {
                   <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
                 )}
               </div>
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <Navbar />
-              <About />
             </>
           }
         />

@@ -12,9 +12,6 @@ const Navbar = () => {
         <li>
           <a href="/todolist">Todo List</a>
         </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
       </ul>
     </nav>
   );

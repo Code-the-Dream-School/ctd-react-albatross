@@ -25,6 +25,9 @@ const Home = () => {
             here
           </a>
           .
+          <br />
+          <br />
+          To see my Todo app, click <a href="/todolist">here</a>.
         </p>
       </div>
     </>
