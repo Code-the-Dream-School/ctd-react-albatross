@@ -1,0 +1,99 @@
+/********************************
+Styling for App.js and Navbar.js 
+********************************/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    rgb(120 81 169),
+    rgb(177 156 217),
+    rgb(231 84 128),
+    rgb(255 131 0),
+    rgb(254 216 177),
+    rgb(255 229 124)
+  );
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+/* TodoList component background */
+.background {
+  background-image: url("./images/renato-ramos-puma-lKdLVkZJdPM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+
+  /* add scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.header {
+  margin: 0;
+  padding: 1%;
+  text-align: center;
+  font-family: "Secular One", sans-serif;
+  font-size: 3em;
+  background-image: var(--gradient);
+  background-clip: text;
+  color: transparent;
+}
+
+.nav {
+  background-color: white;
+  color: rgb(50 82 123);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.site-name {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.nav li:hover {
+  background-color: rgb(50 82 123);
+  color: white;
+}
+
+@media (min-width: 800px) {
+  .background {
+    background-size: cover;
+    background-position: top;
+  }
+  .header {
+    font-size: 5rem;
+  }
+}

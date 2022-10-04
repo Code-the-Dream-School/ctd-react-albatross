@@ -4,6 +4,7 @@ import style from "./TodoList.module.css";
 import PropTypes from "prop-types";
 
 const TodoList = ({ todoList, onRemoveTodo }) => {
+  //map statement which loops through todoList Array and returns TodoListItem Component
   return (
     <>
       <ul className={style.List}>

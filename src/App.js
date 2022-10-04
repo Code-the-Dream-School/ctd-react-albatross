@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import Home from "./components/Home/Home";
 import TodoList from "./components/TodoList/TodoList";
+import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import style from "./App.module.css";
+import "./index.css";
 
 const App = () => {
   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?sort%5B0%5D%5Bfield%5D=Title&sort%5B0%5D%5Bdirection%5D=asc&view=Grid%20view`;
@@ -39,6 +43,7 @@ const App = () => {
   }, [todoList]);
 
   const addTodo = (newTodo) => {
+    //POST new record to Airtable given title field value
     const title = newTodo[0].title;
     const postBody = {
       fields: {
@@ -61,10 +66,12 @@ const App = () => {
         todo.id = data.id;
         todo.title = data.fields.Title;
       });
+    //set todoList state to new Array containing added record
     setTodoList([...todoList, ...newTodo]);
   };
 
   const removeTodo = async (id) => {
+    //DELETE record from Airtable given id
     const options = {
       method: "DELETE",
       headers: {
@@ -75,7 +82,7 @@ const App = () => {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`,
       options
     );
-
+    //set todoList state to new Array not containing removed record
     setTodoList(todoList.filter((todoList) => todoList.id !== id));
   };
 
@@ -87,8 +94,20 @@ const App = () => {
           path="/"
           element={
             <>
-              <div className={style.background}>
-                <h1 className={style.header}>My Todo List</h1>
+              <Navbar />
+              <Home />
+              <About />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/todolist"
+          element={
+            <>
+              <Navbar />
+              <div className="background">
+                <h1 className="header">My Todo List</h1>
 
                 <AddTodoForm onAddTodo={addTodo} />
 
@@ -101,7 +120,6 @@ const App = () => {
             </>
           }
         />
-        <Route path="/new" element={<h1>New Todo List</h1>} />
       </Routes>
     </BrowserRouter>
   );

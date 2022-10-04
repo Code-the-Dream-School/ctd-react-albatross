@@ -8,11 +8,13 @@
 
 .btn {
   background-color: white;
+  color: rgb(50 82 123);
+  font-size: 1.25rem;
   margin-left: auto;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: rgb(35 117 67);
+  background-color: rgb(50 82 123);
   color: white;
 }
