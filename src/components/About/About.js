@@ -13,7 +13,9 @@ const About = () => {
       <p className={style.p}>
         Hi, I'm Amy! I began learning to code with Code the Dream in January
         2022. Thanks to Code the Dream School, I have been able to learn HTML,
-        CSS, JavaScript, and React.js.
+        CSS, JavaScript, and React.js. I am <i>breaking into tech</i> because in
+        addition to closing the gender gap, I would like to see more Latinx and
+        queer representation.
         <br></br>
         <br></br>Pronouns: she/her
       </p>

@@ -12,8 +12,8 @@ const Home = () => {
           final project!
         </h2>
         <p className={style.p}>
-          Through Code the Dream School React Front End Class, I learned how to
-          build a Todo app using React. This course utilizes Road to React by
+          Through Code the Dream School's React Front End Class, I learned how
+          to build a Todo app using React. This course utilizes Road to React by
           Robin Wieruch as its learning material, with supplemental assignments
           created by curriculum developers. All of my work throughout the course
           was done in my GitHub repository{" "}
