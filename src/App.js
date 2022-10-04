@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Home from "./components/Home/Home";
 import TodoList from "./components/TodoList/TodoList";
 import About from "./components/About/About";
-import Footer from "./Footer";
+import Footer from "./components/Footer/Footer";
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
