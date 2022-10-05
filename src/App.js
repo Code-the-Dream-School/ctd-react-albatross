@@ -91,7 +91,7 @@ const App = () => {
       <Routes>
         <Route
           exact
-          path="/"
+          path={process.env.PUBLIC_URL + "/"}
           element={
             <>
               <Navbar />
@@ -102,7 +102,7 @@ const App = () => {
           }
         />
         <Route
-          path="/todolist"
+          path={process.env.PUBLIC_URL + "/todolist"}
           element={
             <>
               <Navbar />
