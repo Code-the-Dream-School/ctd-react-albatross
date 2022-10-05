@@ -1,8 +1,13 @@
 import React from 'react'
-import style from './css/TodoListItem.module.css'; // Import css modules stylesheet as styles
+import style from '../css/TodoListItem.module.css'; // Import css modules stylesheet as styles
+import PropTypes from "prop-types";
+
 const TodoListItem = ({ todo, onRemoveTodo }) => {
 
-
+    TodoListItem.propTypes = {
+        todo: PropTypes.string,
+        onRemoveTodo: PropTypes.func,
+    };
     return (
         <li className={style.ListItem}>
             <span>

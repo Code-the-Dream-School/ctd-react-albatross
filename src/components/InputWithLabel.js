@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
+import PropTypes from "prop-types";
 
 const InputWithLabel = (props) => {
 
@@ -9,6 +10,10 @@ const InputWithLabel = (props) => {
         inputRef.current.focus();
     },
         []);
+
+        InputWithLabel.propTypes = {
+            props: PropTypes.object,
+          };
 
     return (
         <>
